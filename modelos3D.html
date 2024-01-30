@@ -1,0 +1,73 @@
+<!-- Sketchfab -> Low Poly --><!DOCTYPE html>
+<html lang="es">
+ <head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="style.css" />
+   <meta name="description" content="Aquí_va_la_Description" />
+   <script src="index.js" type="module" defer></script>
+   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+   <title>A-frame Hello world</title>
+ </head>
+ <body>
+   <a-scene
+     ><a-assets>
+       <img src="https://www.eltiempo.com/infografias/PruebasDeCodigo/RealidadVirtual/img/grassTexture.jpg" id="grass" alt="" />
+       <a-asset-item
+         id="bulbasaur-obj"
+         src="https://www.eltiempo.com/infografias/PruebasDeCodigo/RealidadVirtual/models/bulbasaur/bulbasaur-pokemon-go.obj"
+       ></a-asset-item>
+       <a-asset-item
+         id="bulbasaur-mtl"
+         src="https://www.eltiempo.com/infografias/PruebasDeCodigo/RealidadVirtual/models/bulbasaur/bulbasaur-pokemon-go.mtl"
+       ></a-asset-item>
+       <a-asset-item
+         id="manrunning"
+         src="/models/male_jogging_30_frames_loop/scene.gltf"
+       ></a-asset-item>
+       <a-asset-item
+         id="bee"
+         src="/models/Bee.glb"
+       ></a-asset-item>
+       <a-asset-item id="house" src="https://www.eltiempo.com/infografias/PruebasDeCodigo/RealidadVirtual/models/house/scene.gltf"></a-asset-item>
+     </a-assets>
+     <a-entity
+       gltf-model="#house"
+       position="-4 .5 -4"
+       scale=".25 .25 .25"
+     ></a-entity>
+     <a-entity
+       gltf-model="#manrunning"
+       position="6 2  -4"
+       scale="1 1 1"
+     ></a-entity>
+     <a-entity
+       gltf-model="#bee"
+       position="6 .5 -4"
+       scale=".25 .25 .25d"
+     ></a-entity>
+
+     <a-entity
+       scale=".25 .25 .25"
+       position="-5 5 -3"s
+       animation="property:position; from:-5 5 -3; to:-5 0 -3; dur:4000; loop:true; dir:alternate;"
+       obj-model="obj: #bulbasaur-obj;mtl:#bulbasaur-mtl"
+     ></a-entity>
+
+     <a-entity position="0 15 -5" animation="property:position; from:0 -5 -18 ;  to: 0 20 -18; dur:4000; easing:linear; " animation__2="property:scale; from: 0.25 0.25 0.25;  to: 2 2 2; loop:1; dur:4000; easing:linear;" >
+      <a-sphere position="4 0 0" radius="2" color="yellow" dir:alternate;"></a-sphere>
+s
+     </a-entity>
+
+     <a-plane
+       width="30"
+       height="30"
+       src="#grass"
+       repeat="10 10"
+       rotation="-90 0 0"
+     ></a-plane>
+     <a-sky color="skyblue"></a-sky>
+   </a-scene>
+ </body>
+</html>

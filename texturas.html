@@ -13,8 +13,13 @@
   <body>
     <a-scene
       ><a-assets>
-        <img src="/img/grassTexture.jpg" id="grass" alt="" />
-        <img src="/img/brickWall.jpg" id="wall" alt="" />
+        <img
+          src="https://www.eltiempo.com/infografias/PruebasDeCodigo/RealidadVirtual/img/grassTexture.jpg"
+          id="grass"
+          alt=""
+        />
+        <!-- src="https://www.eltiempo.com/infografias/PruebasDeCodigo/RealidadVirtual/img/brickWall.jpg" -->
+        <img src="/img/cemento.jpg" id="wall" alt="" />
       </a-assets>
       <a-plane
         width="30"
@@ -29,6 +34,28 @@
         width="6"
         height="4"
         depth="1"
+      ></a-box>
+      <a-box
+        position="6 1.5 -5"
+        src="#wall"
+        width="6"
+        height="4"
+        depth="1"
+      ></a-box>
+      <a-box
+        position="12 1.5 -5"
+        src="#wall"
+        width="6"
+        height="4"
+        depth="1"
+      ></a-box>
+      <a-box
+        position="0 4 -3d"
+        src="#wall"
+        width="6"
+        height="4"
+        depth="1"
+        rotation="90 0 0"
       ></a-box>
       <a-sky color="skyblue"></a-sky>
     </a-scene>

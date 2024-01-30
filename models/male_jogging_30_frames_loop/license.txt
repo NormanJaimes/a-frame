@@ -1,0 +1,8 @@
+Model Information:
+* title:	Male Jogging (30 frames loop)
+* source:	https://sketchfab.com/3d-models/male-jogging-30-frames-loop-a43e5f5cb96b44f39eaa8083c56dafe6
+* author:	Denys Almaral (https://sketchfab.com/denysalmaral)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
