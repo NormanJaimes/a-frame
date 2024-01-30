@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="Aquí_va_la_Description" />
+    <script src="index.js" type="module" defer></script>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <title>A-frame Hello world</title>
+  </head>
+  <body>
+    <a-scene
+      ><a-assets>
+        <img src="/img/grassTexture.jpg" id="grass" alt="" />
+        <img src="/img/brickWall.jpg" id="wall" alt="" />
+      </a-assets>
+      <a-plane
+        width="30"
+        height="30"
+        src="#grass"
+        repeat="10 10"
+        rotation="-90 0 0"
+      ></a-plane>
+      <a-box
+        position="0 1.5 -5"
+        src="#wall"
+        width="6"
+        height="4"
+        depth="1"
+      ></a-box>
+      <a-sky color="skyblue"></a-sky>
+    </a-scene>
+  </body>
+</html>

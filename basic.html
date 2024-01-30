@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="Aquí_va_la_Description" />
+    <script src="index.js" type="module" defer></script>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <title>A-frame Hello world</title>
+  </head>
+  <body>
+    <a-scene>
+      <a-box
+        color="#4cc3d9"
+        position="0 .5 -4"
+        rotation="0 0 0"
+        animation="property:rotation; from:0 0 0; to: 0 360 0; dur:2000; loop:true; easing:linear"
+      ></a-box>
+      <a-entity
+        position="0 .5 -4"
+        animation="property:rotation; from:0 0 0 ;  to: 0 360 0; dur:4000; loop:true; easing:linear"
+      >
+        <a-sphere
+          position="2 0 0"
+          color="#ef2d5e"
+          radius=".3"
+          animation="property:material.color; from:#ef2d5e; to:#00ff00; dur:4000; loop:true; dir:alternate;"
+        ></a-sphere>
+      </a-entity>
+      <a-plane
+        position="0 0 -4"
+        rotation="-90 0 0"
+        color="peru"
+        width="4"
+        height="4"
+      ></a-plane>
+      <a-sky color="skyblue"></a-sky>
+    </a-scene>
+  </body>
+</html>
