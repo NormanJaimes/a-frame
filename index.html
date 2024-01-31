@@ -14,6 +14,9 @@
   </head>
   <body>
     <a-scene>
+      <a-assets>
+        <audio src="/audio/Crowd_Talking.mp3" id="audio"></audio>
+      </a-assets>
       <a-box
         class="clickable"
         position="-1 0.5 -3"
@@ -21,6 +24,7 @@
         rotation="0 45 0"
         event-set__hover="_event:mouseenter;material.color:red;"
         event-set__hover2="_event:mouseleave;material.color:#4cc3d9;"
+        sound="src:#audio; on: click;"
       ></a-box>
       <a-cylinder
         class="clickable"

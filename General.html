@@ -16,6 +16,7 @@
 
     <a-scene
       ><a-assets>
+       <audio src="/audio/Crowd_Talking.mp3" id="audio"></audio>
        <img src='/img/BlancoConSombras.png' id="logo" alt=''>
         <a-asset-item
           id="bulbasaur-obj"
@@ -50,6 +51,7 @@
         position="10 0  -8"
         scale="1 1 1"
         animation-mixer
+        sound="src:#audio; on: click;"
         ></a-entity>
         <a-entity
         gltf-model="#manrunning"
