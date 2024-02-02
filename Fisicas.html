@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <meta name="description" content="Aquí_va_la_Description" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v$npm_package_version/dist/aframe-physics-system.min.js"></script> -->
+    <!-- <script src="fisicas.js"></script> -->
+    <script src="./fisicas/fisicasCannon.js"></script>
+    <script src="./fisicas/componentes.js"></script>
+
+    <title>A-frame Hello world - Enviroment</title>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <audio src="/audio/Crowd_Talking.mp3" id="audio"></audio>
+      </a-assets>
+      <a-box
+        id="box"
+        position="0 0.5 -3"
+        color="#4cc3d9"
+        rotation="0 45 0"
+        static-body
+      ></a-box>
+      <a-cylinder
+        id="cylinder-1"
+        color="#ffc65d"
+        position="-1.5 2 -3"
+        radius=".5"
+        height="1.5"
+        dynamic-body
+      ></a-cylinder>
+      <a-cylinder
+        id="cylinder-2"
+        color="#ffc65d"
+        position="0 3 -3"
+        radius=".5"
+        height="1.5"
+        dynamic-body
+      ></a-cylinder>
+      <a-cylinder
+        id="cylinder-3"
+        color="blue"
+        position="2.5 5 -3"
+        radius=".5"
+        height="1.5"
+        dynamic-body
+        apply-force
+      ></a-cylinder>
+      <a-sphere
+        id="sphere-green"
+        mass="1"
+        dynamic-body
+        position="3 8 -3"
+        radius="1.25"
+        color="green"
+      >
+      </a-sphere>
+      <a-sphere
+        id="sphere-red"
+        collision-detector
+        mass="20"
+        dynamic-body
+        position="0 7 -3"
+        radius="1.25"
+        color="#ef2d5e"
+      >
+      </a-sphere>
+      <a-sphere
+        id="sphere-orange"
+        mass="80"
+        dynamic-body
+        position="-2.5 7 -3"
+        radius="1.25"
+        color="orange"
+      >
+      </a-sphere>
+      <a-plane
+        position="0 0 -4"
+        color="#7bc8a4"
+        width="30"
+        height="30"
+        rotation="-90 0 0"
+        static-body
+        id="plane"
+      ></a-plane>
+      <a-entity camera position="0 1.6 5" look-controls wasd-controls>
+        <a-cursor></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
