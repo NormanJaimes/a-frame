@@ -14,8 +14,8 @@
   </head>
   <body>
 
-    <a-scene
-      ><a-assets>
+    <a-scene vr-mode-ui="enabled: false">
+     <a-assets>
        <audio src="/audio/Crowd_Talking.mp3" id="audio"></audio>
        <img src='/img/BlancoConSombras.png' id="logo" alt=''>
         <a-asset-item
@@ -76,6 +76,10 @@
       <a-entity position="0 15 -5" animation="property:position; from:0 -5 -18 ;  to: 0 20 -18; dur:4000; easing:linear; " animation__2="property:scale; from: 0.25 0.25 0.25;  to: 2 2 2; loop:1; dur:4000; easing:linear;" >
        <a-sphere position="4 0 0" radius="2" color="yellow" dir:alternate;"></a-sphere>
 
+      </a-entity>
+
+      <a-entity id="rig" position="0 0 0">
+       <a-entity camera position="0 1.6 0" wasd-controls="acceleration:120" look-controls="pointerLockEnabled:true"></a-entity>
       </a-entity>
       
       <a-sky color="skyblue"></a-sky>

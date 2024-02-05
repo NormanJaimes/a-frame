@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <meta name="description" content="Aquí_va_la_Description" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="index.js" type="module" defer></script>
+
+    <title>A-frame Hello world - Enviroment</title>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <audio src="/audio/Crowd_Talking.mp3" id="audio"></audio>
+      </a-assets>
+      <a-box position="-1 0.5 -3" color="#4cc3d9" rotation="0 45 0"></a-box>
+      <a-cylinder
+        color="#ffc65d"
+        position="1 .75 -3"
+        radius=".5"
+        height="1.5"
+        change-color="color:green; event:click"
+      ></a-cylinder>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#ef2d5e">
+        <a-text
+          id="text"
+          value="You clicked the sphere"
+          color="black"
+          position="0 1.5 0"
+          visible="false"
+        ></a-text>
+      </a-sphere>
+      <a-plane
+        position="0 0 -4"
+        color="#7bc8a4"
+        width="4"
+        height="4"
+        rotation="-90 0 0"
+      ></a-plane>
+      <a-entity camera position="0 1.6 0" look-controls wasd-controls>
+        <a-cursor></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
