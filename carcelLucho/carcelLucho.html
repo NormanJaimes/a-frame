@@ -8,7 +8,7 @@
     />
     <title>Examples • Castle</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="./aframe-extras.js"></script>
+    <script src="https://www.eltiempo.com/infografias/PruebasDeCodigo/RealidadVirtual/carcelLucho/aframe-extras.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
     <script>
       // https://www.eltiempo.com/infografias/PruebasDeCodigo/RealidadVirtual/carcelLucho/carcelLucho.html
@@ -90,22 +90,16 @@
     >
       <a-assets>
         <!-- <a-asset-item id="navmesh" src="./Castle-navmesh.glb"></a-asset-item> -->
-        <a-asset-item
+        <!-- <a-asset-item
           id="celda-obj"
           src="./prueba-materiales.obj"
         ></a-asset-item>
         <a-asset-item
           id="celda-mtl"
           src="./prueba-materiales.mtl"
-        ></a-asset-item>
-        <a-asset-item
-          id="bulbasaur-obj"
-          src="/models/bulbasaur/bulbasaur-pokemon-go.obj"
-        ></a-asset-item>
-        <a-asset-item
-          id="bulbasaur-mtl"
-          src="/models/bulbasaur/bulbasaur-pokemon-go.mtl"
-        ></a-asset-item>
+        ></a-asset-item> -->
+
+        <a-asset-item id="celda" src="./Carcel.glb"></a-asset-item>
         <a-asset-item id="gem" src="./rupee.glb"></a-asset-item>
         <audio src="/audio/Crowd_Talking.mp3" id="audio"></audio>
       </a-assets>
@@ -164,7 +158,7 @@
             width="2.5"
             height="2"
             color="#000000"
-            position="0 2 -1"
+            position="0 2 0"
             animation="property:position;to:0 0 -1;dur:700; loop:4; dir:alternate;"
           ></a-plane>
         </a-camera>
@@ -172,14 +166,14 @@
 
       <!-- Scene. -->
 
-      <a-entity
+      <!-- <a-entity
         scale=".1 .1 .1"
         position="-5 .5 -2"
         obj-model="obj: #celda-obj;mtl:#celda-mtl"
-      ></a-entity>
+      ></a-entity> -->
 
-      <!-- <a-entity nav-mesha position="0 0 -10" scale="3 3 3" gltf-model="#celda">
-      </a-entity> -->
+      <a-entity nav-mesha position="-2 .5 -0" scale="3 3 3" gltf-model="#celda">
+      </a-entity>
     </a-scene>
   </body>
 </html>
