@@ -42,46 +42,46 @@
       /**
        * Simple spin-and-levitate animation.
        */
-      AFRAME.registerComponent('levitate', {
-        tick: function (t, dt) {
-          var mesh = this.el.getObject3D('mesh');
-          if (!mesh) return;
-          mesh.rotation.y += (0.1 * dt) / 1000;
-          mesh.position.y = 0.25 * Math.sin(t / 1000);
-        },
-      });
+      // AFRAME.registerComponent('levitate', {
+      //   tick: function (t, dt) {
+      //     var mesh = this.el.getObject3D('mesh');
+      //     if (!mesh) return;
+      //     mesh.rotation.y += (0.1 * dt) / 1000;
+      //     mesh.position.y = 0.25 * Math.sin(t / 1000);
+      //   },
+      // });
 
       /**
        * Removes current element if on a mobile device.
        */
-      AFRAME.registerComponent('not-mobile', {
-        init: function () {
-          var el = this.el;
-          if (el.sceneEl.isMobile) {
-            el.parentEl.remove(el);
-          }
-        },
-      });
-      AFRAME.registerComponent('model-opacity', {
-        schema: { default: 1.0 },
-        init: function () {
-          this.el.addEventListener('model-loaded', this.update.bind(this));
-        },
-        update: function () {
-          var mesh = this.el.getObject3D('mesh');
-          var data = this.data;
-          if (!mesh) {
-            return;
-          }
-          mesh.traverse(function (node) {
-            if (node.isMesh) {
-              node.material.opacity = data;
-              node.material.transparent = data < 1.0;
-              node.material.needsUpdate = true;
-            }
-          });
-        },
-      });
+      // AFRAME.registerComponent('not-mobile', {
+      //   init: function () {
+      //     var el = this.el;
+      //     if (el.sceneEl.isMobile) {
+      //       el.parentEl.remove(el);
+      //     }
+      //   },
+      // });
+      // AFRAME.registerComponent('model-opacity', {
+      //   schema: { default: 1.0 },
+      //   init: function () {
+      //     this.el.addEventListener('model-loaded', this.update.bind(this));
+      //   },
+      //   update: function () {
+      //     var mesh = this.el.getObject3D('mesh');
+      //     var data = this.data;
+      //     if (!mesh) {
+      //       return;
+      //     }
+      //     mesh.traverse(function (node) {
+      //       if (node.isMesh) {
+      //         node.material.opacity = data;
+      //         node.material.transparent = data < 1.0;
+      //         node.material.needsUpdate = true;
+      //       }
+      //     });
+      //   },
+      // });
     </script>
   </head>
   <body>
