@@ -22,19 +22,46 @@
           });
         },
       });
+      AFRAME.registerComponent('registerVR', {
+        schema: {
+          position: { default: '0 0 0' },
+        },
+        init: function () {
+          this.el.sceneEl.addEventListener('enter-vr', function () {
+            this.el.removeAttribute('cursor');
+          });
+          this.el.sceneEl.addEventListener('exit-vr', function () {
+            this.el.setAttrubute('cursor', 'rayOrigin', 'mouse');
+          });
+        },
+      });
     </script>
   </head>
   <body>
-    <a-scene cursor="rayOrigin:mouse">
+    <!-- <a-scene cursor="rayOrigin:mouse"> -->
+    <a-scene cursor="rayOrigin:mouse" registerVR>
+      <!-- <a-scene> -->
       <a-assets>
         <a-asset-item id="celda" src="./Carcel.glb"></a-asset-item>
         <audio src="./Crowd_Talking.mp3" id="audio"></audio>
-      </a-assets>
-      <a-entity environment="preset: forest"></a-entity>
+        <img src="./paredLucho.jpg" id="texturaPared" alt="" />
 
+        <!-- <a-asset-item
+          id="celda-obj"
+          src="./prueba materiales.obj"
+        ></a-asset-item>
+        <a-asset-item
+          id="celda-mtl"
+          src="./prueba materiales.mtl"
+        ></a-asset-item> -->
+      </a-assets>
+      <a-entity environment="preset: checkerboard"></a-entity>
+
+      <!-- sound="src:#audio; on: click;" -->
       <a-sphere
         checkpoint
-        radius="0.1"
+        class="clickable"
+        radius="0.2"
         position="0 4 -2"
         rotation="90 0 0"
         color="#FF0000"
@@ -43,26 +70,183 @@
       ></a-sphere>
       <a-sphere
         checkpoint
-        radius="0.1"
-        position="-1 6 -3"
+        class="clickable"
+        radius="0.2"
+        position="-1 4 8.8"
         rotation="90 0 0"
         color="#FF0000"
-        teleporter="position:-1 6 -3"
+        teleporter="position:-1 6 8.8"
       ></a-sphere>
       <a-sphere
-        teleporter="position:-11 4 -2"
+        teleporter="position:-81 4 -2"
         checkpoint
-        radius="0.1"
+        class="clickable"
+        radius="0.2"
         position="-11 4 -2"
         rotation="90 0 0"
         color="#FF0000"
       ></a-sphere>
+      <a-sphere
+        teleporter="position:-81 4 -2"
+        checkpoint
+        class="clickable"
+        radius="0.2"
+        position="8 4 1"
+        rotation="90 0 0"
+        color="#FF0000"
+      ></a-sphere>
+      <a-sphere
+        teleporter="position:-81 4 -2"
+        checkpoint
+        class="clickable"
+        radius="0.2"
+        position="8.4 4 7"
+        rotation="90 0 0"
+        color="#FF0000"
+      ></a-sphere>
+      <a-sphere
+        teleporter="position:-81 4 -2"
+        checkpoint
+        class="clickable"
+        radius="0.2"
+        position="7.7 4 -9.7"
+        rotation="90 0 0"
+        color="#FF0000"
+      ></a-sphere>
+      <a-sphere
+        teleporter="position:-81 4 -2"
+        checkpoint
+        class="clickable"
+        radius="0.2"
+        position="-6.6 4 -9.7"
+        rotation="90 0 0"
+        color="#FF0000"
+      ></a-sphere>
+      <a-sphere
+        teleporter="position:-81 4 -2"
+        checkpoint
+        class="clickable"
+        radius="0.2"
+        position="3.7 4 -15"
+        rotation="90 0 0"
+        color="#FF0000"
+      ></a-sphere>
 
+      <!-- <a-entity
+        scale=".1 .1 .1"
+        position="-5 .5 -2"
+        obj-model="obj: #celda-obj;mtl:#celda-mtl"
+      ></a-entity> -->
       <a-entity position="-2 .3 -0" scale="3 3 3" gltf-model="#celda">
       </a-entity>
-      <a-sky color="#ECECEC"></a-sky>
+      <!-- paredes -->
+      <a-box
+        position="5.8 4 -18.3"
+        width="11.1"
+        height="7.6"
+        rotation="0 00 0"
+        color="#565655"
+        src="#texturaPared"
+      ></a-box>
+      <a-box
+        position="-3.7.8 4 -18.3"
+        width="11.1"
+        height="7.6"
+        rotation="0 00 0"
+        color="#565655"
+        src="#texturaPared"
+      ></a-box>
+      <a-box
+        position="5.8 4 15.3"
+        width="11.1"
+        height="7.6"
+        rotation="0 00 0"
+        color="#565655"
+        src="#texturaPared"
+      ></a-box>
+      <a-box
+        position="-3.7.8 4 15.3"
+        width="11.1"
+        height="7.6"
+        rotation="0 00 0"
+        color="#565655"
+        src="#texturaPared"
+      ></a-box>
+      <!-- paredes celdas -->
+      <a-box
+        position="-9.7 4 -12.2"
+        width="11.1"
+        height="7.6"
+        rotation="0 90 0"
+        color="#565655"
+        src="#texturaPared"
+      ></a-box>
+      <a-box
+        position="-9.7 4 -1.2"
+        width="11.1"
+        height="7.6"
+        rotation="0 90 0"
+        color="#565655"
+        src="#texturaPared"
+      ></a-box>
+      <a-box
+        position="-9.7 4 9.9"
+        width="11.1"
+        height="7.6"
+        rotation="0 90 0"
+        color="#565655"
+        src="#texturaPared"
+      ></a-box>
+      <!-- Pared de Frente -->
+      <a-box
+        position="5.8 4 -12.2"
+        width="11.1"
+        height="7.6"
+        rotation="0 0 0"
+        color="#565655"
+        src="#texturaPared"
+      ></a-box>
+      <a-box
+        position="11.7 4 -12.2"
+        width="11.1"
+        height="7.6"
+        rotation="0 90 0"
+        color="#565655"
+        src="#texturaPared"
+      ></a-box>
+      <a-box
+        position="11.7 4 -1.2"
+        width="11.1"
+        height="7.6"
+        rotation="0 90 0"
+        color="#565655"
+        src="#texturaPared"
+      ></a-box>
+      <a-box
+        position="11.7 4 9.9"
+        width="11.1"
+        height="7.6"
+        rotation="0 90 0"
+        color="#565655"
+        src="#texturaPared"
+      ></a-box>
+      <a-box
+        position="11.7 4 21"
+        width="11.1"
+        height="7.6"
+        rotation="0 90 0"
+        color="#565655"
+        src="#texturaPared"
+      ></a-box>
+      <a-sky color="#ccc"></a-sky>
       <a-entity id="rig" position="0 0 0">
-        <a-camera position="0 3 0"></a-camera>
+        <a-camera position="4 4 10">
+          <a-cursor
+            color="red"
+            fuse="true"
+            raycaster="objects: .clickable"
+          ></a-cursor>
+        </a-camera>
       </a-entity>
     </a-scene>
   </body>
